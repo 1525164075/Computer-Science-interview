@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 800px;
+            margin: 200px auto;
+            color: red;
+            text-align: center;
+            font: 600 30px/30px '微软雅黑';
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        function getCurrentDate(){
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            var week = date.getDay();
+            var weekArr = ['日', '一', '二', '三', '四', '五', '六'];
+            var hour = date.getHours();
+            hour = hour < 10 ? '0' + hour : hour;
+            var minute = date.getMinutes();
+            minute = minute < 10 ? '0' + minute : minute;
+            var second = date.getSeconds();
+            second = second < 10 ? '0' + second : second;
+            var res = year + '年' + month + '月' + day + '日 ' + '星期' + weekArr[week] + ' ' + hour + ':' + minute + ':' + second;
+            return res;
+        }
+        const div = document.querySelector('div');
+        div.innerHTML = getCurrentDate();
+        setInterval(() => {
+            div.innerHTML = getCurrentDate();
+        }, 1000);
+    </script>
+</body>
+</html>

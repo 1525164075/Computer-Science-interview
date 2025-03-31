@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var myReg = new RegExp("cat");
+        // var str = "The cat is here.";
+        // console.log(myReg.test(str)); // true
+
+        // var str2 = "We have a dog.";
+        // console.log(myReg.test(str2)); // false
+
+        // var myR2 = /cat/i;
+        // console.log(myR2.test(str2)); // false
+
+        // var reg = new RegExp("a"); // 定义一个正则表达式：检查字符串中是否有字母a
+        // var str1 = "qianguyihao";
+        // var str2 = "smyh";
+
+        // console.log(reg.test(str1)); // true
+        // console.log(reg.test(str2)); // false
+
+        // var myReg = /cat/g;
+        // var str = "cat and another cat";
+
+        // console.log(myReg.test(str)); // true
+        // console.log(myReg.lastIndex); // 3
+        // console.log(myReg.test(str)); // true
+        // console.log(myReg.lastIndex); // 17
+        // console.log(myReg.test(str)); // false
+        // console.log(myReg.lastIndex); // 17（未重置为 0）
+        // // myReg.lastIndex = 0; // 手动重置
+        // console.log(myReg.test(str)); // true（重新从头开始）
+        // console.log(myReg.lastIndex); // 3
+
+        // const reg = /test/g;
+        // const str = '_test_test';
+
+        // console.log(reg.test(str)); // true
+        // console.log(reg.lastIndex); // 5
+
+        // console.log(reg.test(str)); // true
+        // console.log(reg.lastIndex); // 10
+
+        // console.log(reg.test(str)); // false
+        // console.log(reg.lastIndex); // 0
+
+        var reg = /a|b/
+        var str = 'a'
+        console.log(reg.test(str)) // true
+
+        var reg1 = /[ab]/i;
+        var str1 = 'A'
+        console.log(reg1.test(str1)) // true
+
+        var phoneStr = "13067890123";
+        var phoneReg = /^1[3-9][0-9]{9}$/;
+        console.log(phoneReg.test(phoneStr))
+            </script>
+</body>
+</html>

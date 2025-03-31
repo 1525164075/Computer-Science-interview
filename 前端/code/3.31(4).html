@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DOM 节点操作总结</title>
+</head>
+<body>
+
+<div id="container">
+  <p id="original-paragraph">原始段落</p>
+</div>
+
+<button onclick="performDomOperations()">执行 DOM 操作</button>
+
+<script>
+  function performDomOperations() {
+    const container = document.getElementById('container');
+    const originalParagraph = document.getElementById('original-paragraph');
+
+    // 1. 创建节点
+    const newParagraph = document.createElement('p');
+    const newText = document.createTextNode('这是新创建的段落。');
+    const newSpan = document.createElement('span');
+    newSpan.textContent = '高亮文本';
+    newSpan.style.color = 'blue';
+
+    // 2. 添加节点
+    newParagraph.appendChild(newText);
+    container.appendChild(newParagraph); // 添加到容器末尾
+
+    const comment = document.createComment('这是一个动态添加的注释');
+    container.insertBefore(comment, originalParagraph); // 在原始段落之前插入
+
+    // 3. 修改节点内容和属性
+    originalParagraph.textContent = '原始段落已被修改！';
+    originalParagraph.setAttribute('class', 'modified');
+
+    // 4. 替换节点
+    const replacementButton = document.createElement('button');
+    replacementButton.textContent = '替换按钮';
+    container.replaceChild(replacementButton, newParagraph); // 用按钮替换新段落
+
+    // 5. 移除节点
+    const commentToRemove = container.firstChild; // 获取第一个子节点 (刚才添加的注释)
+    container.removeChild(commentToRemove);
+  }
+</script>
+
+</body>
+</html>

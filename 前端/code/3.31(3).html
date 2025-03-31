@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM 访问关系示例</title>
+  </head>
+  <body>
+    <div id="parent">
+      <p id="first-child">第一个子元素</p>
+      <span id="middle-child">第二个子元素</span>
+      <button id="last-child">第三个子元素</button>
+    </div>
+
+    <script>
+      // 获取中间的子元素
+      const middleChild = document.getElementById("middle-child");
+
+      // 访问父元素
+      const parentElement = middleChild.parentNode;
+      console.log("父元素:", parentElement);
+
+      // 访问子元素
+      const children = parentElement.children;
+      console.log("所有子元素:", children);
+      const firstChildElement = parentElement.firstElementChild;
+      console.log("第一个子元素:", firstChildElement);
+      const lastChildElement = parentElement.lastElementChild;
+      console.log("最后一个子元素:", lastChildElement);
+
+      // 访问兄弟元素
+      const previousSiblingElement = middleChild.previousElementSibling;
+      console.log("前一个兄弟元素:", previousSiblingElement);
+      const nextSiblingElement = middleChild.nextElementSibling;
+      console.log("后一个兄弟元素:", nextSiblingElement);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 1210px;
+            margin: 200px auto;
+            color: red;
+            text-align: center;
+            font: 600 30px/30px '微软雅黑';
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        var div = document.querySelector('div');
+        var timer = setInterval(() =>{
+            countDown('2026/02/03 11:06:44');
+        }, 1);
+        function countDown(myTime){
+            var nowTime = new Date();
+            var endTime = new Date(myTime);
+            var TimeSum = endTime.getTime() - nowTime.getTime(); //获取时间差
+
+            var day = Math.floor(TimeSum / (1000 * 60 * 60 * 24));
+            var hour = Math.floor(TimeSum / (1000 * 60 * 60) % 24);
+            var minute = Math.floor(TimeSum / (1000 * 60) % 60);
+            var second = Math.floor(TimeSum / 1000 % 60);
+            var millsec = Math.floor(TimeSum % 1000);
+
+            day = day < 10 ? '0' + day : day;
+            hour = hour < 10 ? '0' + hour : hour;
+            minute = minute < 10 ? '0' + minute : minute;
+            second = second < 10 ? '0' + second : second;
+            if (millsec < 10){
+                millsec = '00' + millsec;
+            }else if (millsec < 100){
+                millsec = '0' + millsec;
+            }
+
+            if (TimeSum < 0){
+                clearInterval(timer);
+                div.innerHTML = '倒计时结束';
+                return;
+            }
+            div.innerHTML = '距离' + myTime + '还有' + day + '天' + hour + '时' + minute + '分' + second + '秒' + millsec + '毫秒';
+        }
+    </script>
+</body>
+</html>

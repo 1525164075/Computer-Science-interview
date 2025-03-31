@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        input {
+            display: block;
+        }
+    </style>
+
+</head>
+
+<body>
+<ul>
+    <input type="text"/>
+    <input type="text"/>
+    <input type="text"/>
+    <input type="text"/>
+    <input type="text"/>
+</ul>
+<script>
+    //需求：让所有的input标签获取焦点后高亮显示
+
+    //1.获取事件源
+    var inpArr = document.getElementsByTagName("input");
+    //2.绑定事件
+    //3.书写事件驱动程序
+    for (var i = 0; i < inpArr.length; i++) {
+        //获取焦点后，所有的input标签被绑定onfocus事件
+        inpArr[i].onfocus = function () {
+            this.style.border = "2px solid red";
+            this.style.backgroundColor = "#ccc";
+        }
+        //绑定onblur事件，取消样式
+        inpArr[i].onblur = function () {
+            this.style.border = "";
+            this.style.backgroundColor = "";
+        }
+    }
+</script>
+</body>
+</html>

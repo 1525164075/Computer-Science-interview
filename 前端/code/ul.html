@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    ul {
+        list-style-position: outside;
+    }
+    table {
+        border: 1px solid black;
+        border-collapse: collapse; /* 合并边框 */
+    }
+    td {
+        border: 1px solid black;
+    }
+</style>
+<body>
+    <ol type="i" start="10">
+        <li>第一个</li>
+        <li>第二个</li>
+        <li>第三个</li>
+    </ol>
+    <ul type="circle">
+        <li><a href="1">1</a></li>
+        <li type="square"><a href="2">2</a></li>
+        <li><a href="2">3</a></li>
+    </ul>
+        <ul>
+            <li><b>北京市</b>
+                <ul>
+                    <li>海淀区</li>
+                    <li>朝阳区</li>
+                    <li>东城区</li>
+                </ul>
+            </li>
+            <li>
+                <b>武汉市</b>
+                <ul>
+                    <li>洪山区</li>
+                    <li>江夏区</li>
+                    <li>武昌区</li>
+                </ul>
+            </li>
+        </ul>
+    <dl>
+        <dt>第一条</dt>
+        <dd>你若是觉得你有实力和我玩，良辰不介意奉陪到底</dd>
+        <dd>我会让你明白，我从不说空话</dd>
+        <dd>我是本地的，我有一百种方式让你呆不下去；而你，无可奈何</dd>
+
+        <dt>第二条</dt>
+        <dd>良辰最喜欢对那些自认能力出众的人出手</dd>
+        <dd>你可以继续我行我素，不过，你的日子不会很舒心</dd>
+        <dd>你只要记住，我叫叶良辰</dd>
+        <dd>不介意陪你玩玩</dd>
+        <dd>良辰必有重谢</dd>
+
+    </dl>
+    <dl>
+        <dt>北京</dt>
+        <dd>国家首都，政治文化中心</dd>
+        <dd>污染很严重，PM2.0天天报表</dd>
+    </dl>
+
+    <dl>
+        <dt>上海</dt>
+        <dd>魔都，有外滩、东方明珠塔、黄浦江</dd>
+    </dl>
+
+    <dl>
+        <dt>广州</dt>
+        <dd>中国南大门，有珠江、小蛮腰</dd>
+    </dl>
+    <table>
+        <tr>
+            <td>千古壹号</td>
+            <td>23</td>
+            <td>男</td>
+            <td>黄冈</td>
+        </tr>
+
+        <tr>
+            <td>许嵩</td>
+            <td>29</td>
+            <td>男</td>
+
+        </tr>
+
+        <tr>
+            <td>邓紫棋</td>
+            <td>23</td>
+
+            <td colspan="2">香港</td>
+        </tr>
+
+    </table>
+    <input type="text" name="1" value="sb" readonly/>1<br>
+    <input type="checkbox" name="1"/>1<br>
+
+    <input type="checkbox" name="2"/>1
+    <form>
+        姓名：<input value="呵呵">逗比<br>
+        昵称：<input value="哈哈" readonly=""><br>
+        名字：<input type="text" value="name" disabled=""><br>
+        密码：<input type="password" value="pwd" size="50"><br>
+        性别：<input type="radio" name="gender" id="radio1" value="male" checked="">男
+        <input type="radio" name="gender" id="radio2" value="female">女<br>
+        爱好：<input type="checkbox" name="love" value="eat">吃饭
+        <input type="checkbox" name="love" value="sleep">睡觉
+        <input type="checkbox" name="love" value="bat">打豆豆
+    </form>
+    <form>
+        <select>
+            <option>小学</option>
+            <option>初中</option>
+            <option>高中</option>
+            <option>大学</option>
+            <option selected="">研究生</option>
+        </select>
+        <br><br><br>
+
+        <select size="9">
+            <option>小学</option>
+            <option>初中</option>
+            <option>高中</option>
+            <option>大学</option>
+            <option>研究生</option>
+        </select>
+        <br><br><br>
+
+        <select multiple="">
+            <option>小学</option>
+            <option>初中</option>
+            <option selected="">高中</option>
+            <option selected="">大学</option>
+            <option>研究生</option>
+        </select>
+        <br><br><br>
+
+    </form>
+    <form>
+
+        <fieldset>
+            <legend>账号信息</legend>
+            <p>姓名：<input value="呵呵">逗比</p>
+            <p>密码：<input type="password" value="pwd" size="50"></p>
+        </fieldset>
+
+        <fieldset>
+            <legend>其他信息</legend>
+            性别：<input type="radio" name="gender" value="male" checked="">男
+            <input type="radio" name="gender" value="female">女<br>
+            爱好：<input type="checkbox" name="love" value="eat">吃饭
+            <input type="checkbox" name="love" value="sleep">睡觉
+            <input type="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="请输入邮箱">
+            <input type="checkbox" name="love" value="bat">打豆豆
+        </fieldset>
+
+    </form>
+    <input type="radio" name="sex" id="nan" /> <label for="nan">男</label>
+    <input type="radio" name="sex" id="nv" /> <label for="nv">女</label>
+</body>
+</html>

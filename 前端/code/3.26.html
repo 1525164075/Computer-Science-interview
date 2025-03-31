@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        var date1 = new Date();
+        console.log(date1);
+        console.log(typeof date1);
+
+        const date11 = new Date('2020/02/17 21:00:00');
+        console.log(date11);
+
+        const date12 = new Date('2020/04/19');
+        console.log(date12);
+
+        const date21 = new Date(2020, 2, 18);
+        console.log(date21);
+
+        const date22 = new Date(2020, 3, 20, 21, 0, 0);
+        console.log(date22);
+
+        const params = [2020, 4, 21, 21, 0, 0];;
+        const date23 = new Date(...params);
+        console.log(date23);
+
+        const date31 = new Date(1591950413388)
+
+        var myDate = new Date();
+        console.log(myDate);
+        console.log(myDate.getFullYear());
+        console.log(myDate.getMonth() + 1);
+
+        function formatDate(){
+            var date = new Date();
+
+            var year = date.getFullYear(); // 年
+            var month = date.getMonth() + 1; // 月
+            var day = date.getDate(); // 日
+
+            var week = date.getDay(); // 周
+            var weekArr = ['日', '一', '二', '三', '四', '五', '六'];
+
+            var hour = date.getHours(); // 时
+            hour = hour < 10 ? '0' + hour : hour;
+
+            var minute = date.getMinutes(); // 分
+            minute = minute < 10 ? '0' + minute : minute;
+
+            var second = date.getSeconds(); // 秒
+            second = second < 10 ? '0' + second : second;
+
+            var res = year + '年' + month + '月' + day + '日 ' + '星期' + weekArr[week] + ' ' + hour + ':' + minute + ':' + second;
+
+            return res;
+
+        }
+        console.log(formatDate());
+
+        const timestamp = +new Date();
+        console.log(timestamp);
+        const date = new Date(timestamp);
+        console.log(date);
+        console.log(date.toLocaleString());
+        console.log(date.toUTCString());
+    </script>
+</body>
+</html>

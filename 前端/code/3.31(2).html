@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <script>
+        window.onload = function () {
+        alert("smyhvae");  //等页面加载完毕时，打印字符串
+    }
+        var div1 = document.getElementById("box1");
+        div1.onclick = function(){
+
+            div1.style.width = "200px";
+            div1.style.height = "200px";
+            div1.style.backgroundColor = "lightblue";
+            alert("点击了 div1");
+        }
+    </script>
+</body>
+</html>

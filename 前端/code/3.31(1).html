@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>区分 DOM 获取方法</title>
+    <style>
+        .hehe {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1" class="hehe">这是 ID 为 box1 的 div</div>
+    <div class="hehe">这是第二个 hehe 类的 div</div>
+    <div>这是第三个普通 div</div>
+    <p>这是一个段落，不是 div</p>
+
+    <script>
+        // 方法 1：通过 ID 获取单个元素
+        var div1 = document.getElementById("box1");
+        console.log("getElementById('box1'):", div1);
+        if (div1) {
+            div1.style.backgroundColor = "lightblue"; // 修改背景色以区分
+            console.log("div1 的文本内容:", div1.textContent);
+        } else {
+            console.log("未找到 ID 为 box1 的元素");
+        }
+
+        // 方法 2：通过标签名获取所有 div 元素
+        var arr1 = document.getElementsByTagName("div");
+        console.log("getElementsByTagName('div'):", arr1);
+        console.log("div 元素数量:", arr1.length);
+        for (var i = 0; i < arr1.length; i++) {
+            arr1[i].style.borderColor = "green"; // 修改边框颜色以区分
+            console.log(`div[${i}] 的文本内容:`, arr1[i].textContent);
+        }
+
+        // 方法 3：通过类名获取所有 hehe 类的元素
+        var arr2 = document.getElementsByClassName("hehe");
+        console.log("getElementsByClassName('hehe'):", arr2);
+        console.log("hehe 类元素数量:", arr2.length);
+        for (var j = 0; j < arr2.length; j++) {
+            arr2[j].style.fontWeight = "bold"; // 加粗字体以区分
+            console.log(`hehe[${j}] 的文本内容:`, arr2[j].textContent);
+        }
+    </script>
+</body>
+</html>
